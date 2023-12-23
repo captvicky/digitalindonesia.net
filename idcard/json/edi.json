@@ -1,0 +1,38 @@
+{
+  "description": "ID Card Kepegawaian Digital Indonesia", 
+  "external_url": "https://digitalindonesia.net", 
+  "animation_url": "https://digitalindonesia.net/idcard/animation/edi.mp4",
+  "image": "https://digitalindonesia.net/idcard/image/edi.jpg", 
+  "name": "Edi Panuntun #RESIGN",
+  "attributes": [
+    {
+      "trait_type": "Jabatan", 
+      "value": "Admin"
+    }, 
+    {
+      "trait_type": "Angkatan", 
+      "value": "2021"
+    }, 
+    {
+      "trait_type": "Grade", 
+      "value": 3
+    }, 
+    {
+      "trait_type": "Department", 
+      "value": "Admin"
+    }, 
+    {
+      "display_type": "date", 
+      "trait_type": "Expired Date", 
+      "value": 1921237593
+    }, 
+    {
+      "trait_type": "Birth City", 
+      "value": "Bandung"
+    },
+    {
+      "trait_type": "Status", 
+      "value": "RESIGN"
+    }
+  ]
+}

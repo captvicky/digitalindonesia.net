@@ -1,0 +1,38 @@
+{
+  "description": "ID Card Kepegawaian Digital Indonesia", 
+  "external_url": "https://digitalindonesia.net", 
+  "animation_url": "https://digitalindonesia.net/idcard/animation/oghe.mp4",
+  "image": "https://digitalindonesia.net/idcard/image/imageoghe.jpg", 
+  "name": "Rangga Firmansyah",
+  "attributes": [
+    {
+      "trait_type": "Jabatan", 
+      "value": "VR CONSULTANT"
+    }, 
+    {
+      "trait_type": "Angkatan", 
+      "value": "2016"
+    }, 
+    {
+      "trait_type": "Grade", 
+      "value": 4
+    }, 
+    {
+      "trait_type": "Department", 
+      "value": "Education"
+    }, 
+    {
+      "display_type": "date", 
+      "trait_type": "Expired Date", 
+      "value": 1921237593
+    }, 
+    {
+      "trait_type": "Birth City", 
+      "value": "Jakarta"
+    },
+    {
+      "trait_type": "Status", 
+      "value": "IN-CHARGE"
+    }
+  ]
+}

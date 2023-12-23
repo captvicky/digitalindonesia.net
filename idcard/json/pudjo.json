@@ -1,0 +1,38 @@
+{
+  "description": "ID Card Kepegawaian Digital Indonesia", 
+  "external_url": "https://digitalindonesia.net", 
+  "animation_url": "https://digitalindonesia.net/idcard/animation/pudjo.mp4",
+  "image": "https://digitalindonesia.net/idcard/image/imagepudjo.jpg", 
+  "name": "Pudjo Pudjiatno",
+  "attributes": [
+    {
+      "trait_type": "Jabatan", 
+      "value": "WAREHOUSE KEEPER"
+    }, 
+    {
+      "trait_type": "Angkatan", 
+      "value": "2014"
+    }, 
+    {
+      "trait_type": "Grade", 
+      "value": 1
+    }, 
+    {
+      "trait_type": "Department", 
+      "value": "Warehouse"
+    }, 
+    {
+      "display_type": "date", 
+      "trait_type": "Expired Date", 
+      "value": 1921237593
+    }, 
+    {
+      "trait_type": "Birth City", 
+      "value": "Bandung"
+    },
+    {
+      "trait_type": "Status", 
+      "value": "IN-CHARGE"
+    }
+  ]
+}

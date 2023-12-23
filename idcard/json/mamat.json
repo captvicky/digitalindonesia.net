@@ -1,0 +1,38 @@
+{
+  "description": "ID Card Kepegawaian Digital Indonesia", 
+  "external_url": "https://digitalindonesia.net", 
+  "animation_url": "https://digitalindonesia.net/idcard/animation/mamat.mp4",
+  "image": "https://digitalindonesia.net/idcard/image/mamat.jpg", 
+  "name": "Rahmat Firdaus #RESIGN",
+  "attributes": [
+    {
+      "trait_type": "Jabatan", 
+      "value": "WAREHOUSE OFFICER"
+    }, 
+    {
+      "trait_type": "Angkatan", 
+      "value": "2015"
+    }, 
+    {
+      "trait_type": "Grade", 
+      "value": 1
+    }, 
+    {
+      "trait_type": "Department", 
+      "value": "Warehouse"
+    }, 
+    {
+      "display_type": "date", 
+      "trait_type": "Expired Date", 
+      "value": 1921237593
+    }, 
+    {
+      "trait_type": "Birth City", 
+      "value": "Banyumas"
+    },
+    {
+      "trait_type": "Status", 
+      "value": "RESIGN"
+    }
+  ]
+}

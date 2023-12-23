@@ -1,0 +1,38 @@
+{
+  "description": "ID Card Kepegawaian Digital Indonesia", 
+  "external_url": "https://digitalindonesia.net", 
+  "animation_url": "https://digitalindonesia.net/idcard/animation/ridwan.mp4",
+  "image": "https://digitalindonesia.net/idcard/image/imageridwan.jpg", 
+  "name": "Arid Ridwan #RESIGN",
+  "attributes": [
+    {
+      "trait_type": "Jabatan", 
+      "value": "WAREHOUSE SPV"
+    }, 
+    {
+      "trait_type": "Angkatan", 
+      "value": "2019"
+    }, 
+    {
+      "trait_type": "Grade", 
+      "value": 1
+    }, 
+    {
+      "trait_type": "Department", 
+      "value": "Warehouse"
+    }, 
+    {
+      "display_type": "date", 
+      "trait_type": "Expired Date", 
+      "value": 1921237593
+    }, 
+    {
+      "trait_type": "Birth City", 
+      "value": "Garut"
+    },
+    {
+      "trait_type": "Status", 
+      "value": "RESIGN"
+    }
+  ]
+}
