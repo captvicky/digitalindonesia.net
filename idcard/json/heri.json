@@ -1,9 +1,9 @@
 {
   "description": "ID Card Kepegawaian Digital Indonesia", 
   "external_url": "https://digitalindonesia.net", 
-  "animation_url": "https://digitalindonesia.net/idcard/animation/antianimation.mp4",
-  "image": "https://digitalindonesia.net/idcard/image/anti.jpg", 
-  "name": "Nur Aini Febrianti #RESIGN",
+  "animation_url": "https://digitalindonesia.net/idcard/animation/heri.mp4",
+  "image": "https://digitalindonesia.net/idcard/image/heri.jpg", 
+  "name": "Heri",
   "attributes": [
     {
       "trait_type": "Jabatan", 
@@ -11,7 +11,7 @@
     }, 
     {
       "trait_type": "Angkatan", 
-      "value": "2023"
+      "value": "2024"
     }, 
     {
       "trait_type": "Grade", 
@@ -32,7 +32,7 @@
     },
     {
       "trait_type": "Status", 
-      "value": "RESIGN"
+      "value": "IN-CHARGE"
     }
   ]
 }

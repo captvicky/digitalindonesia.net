@@ -1,17 +1,17 @@
 {
   "description": "ID Card Kepegawaian Digital Indonesia", 
   "external_url": "https://digitalindonesia.net", 
-  "animation_url": "https://digitalindonesia.net/idcard/animation/antianimation.mp4",
-  "image": "https://digitalindonesia.net/idcard/image/anti.jpg", 
-  "name": "Nur Aini Febrianti #RESIGN",
+  "animation_url": "https://digitalindonesia.net/idcard/animation/roni.mp4",
+  "image": "https://digitalindonesia.net/idcard/image/roni.jpg", 
+  "name": "Roni Heryanto #RESIGN",
   "attributes": [
     {
       "trait_type": "Jabatan", 
-      "value": "ADMIN"
+      "value": "Admin"
     }, 
     {
       "trait_type": "Angkatan", 
-      "value": "2023"
+      "value": "2021"
     }, 
     {
       "trait_type": "Grade", 
@@ -28,7 +28,7 @@
     }, 
     {
       "trait_type": "Birth City", 
-      "value": "Bandung"
+      "value": "Subang"
     },
     {
       "trait_type": "Status", 
