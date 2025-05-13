@@ -3,7 +3,7 @@
   "external_url": "https://digitalindonesia.net", 
   "animation_url": "https://digitalindonesia.net/idcard/animation/septi.mp4",
   "image": "https://digitalindonesia.net/idcard/image/septi.jpg", 
-  "name": "De Septi Saepul Patonah",
+  "name": "De Septi Saepul Patonah #RESIGN",
   "attributes": [
     {
       "trait_type": "Jabatan", 
@@ -32,7 +32,7 @@
     },
     {
       "trait_type": "Status", 
-      "value": "IN-CHARGE"
+      "value": "RESIGN"
     }
   ]
 }
