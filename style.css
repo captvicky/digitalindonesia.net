@@ -64,6 +64,10 @@
   --radius-global: 0px;
   --radius-inputs: 0px;
   --radius-buttons: 0px;
+
+  /* Motion — from basement.studio tokens */
+  --motion-duration-instant: 60ms;
+  --motion-duration-fast: 300ms;
 }
 
 /* ---- Reset ---- */
@@ -354,23 +358,98 @@ svg {
   grid-template-columns: repeat(3, 1fr);
   gap: 0;
   border: 1px solid var(--color-carbon);
+  position: relative;
 }
 
+/* =========================================================
+   COMPANY CARD — Variative Design per Basement Studio
+   ========================================================= */
 .company-card {
+  position: relative;
   display: flex;
   flex-direction: column;
-  padding: var(--card-padding);
+  padding: var(--sp-24);
   border: 1px solid var(--color-carbon);
-  background: transparent;
-  transition: background 0.2s ease;
+  background: var(--color-void);
   cursor: pointer;
   text-decoration: none;
+  gap: var(--sp-8);
+  overflow: hidden;
+  transition: background var(--motion-duration-fast, 300ms) ease,
+              border-color var(--motion-duration-fast, 300ms) ease,
+              box-shadow var(--motion-duration-fast, 300ms) ease;
+}
+
+/* Subtle accent border top per card */
+.company-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--motion-duration-fast, 300ms) ease;
 }
 
 .company-card:hover {
-  background: var(--color-obsidian);
+  background: var(--color-cinder);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent-dim);
 }
 
+.company-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Icon row */
+.company-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--color-carbon);
+  color: var(--accent);
+  margin-bottom: var(--sp-4);
+  transition: background var(--motion-duration-fast, 300ms) ease,
+              border-color var(--motion-duration-fast, 300ms) ease,
+              transform var(--motion-duration-fast, 300ms) ease;
+}
+
+.company-card:hover .company-card__icon {
+  background: var(--accent-dim);
+  border-color: var(--accent);
+  color: var(--color-chalk);
+  transform: scale(1.05);
+}
+
+/* Badge — unique per company */
+.company-card__badge {
+  position: absolute;
+  top: var(--sp-8);
+  right: var(--sp-8);
+  font-family: var(--font-geist);
+  font-weight: var(--fw-medium);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 2px 8px;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  background: transparent;
+  transition: background var(--motion-duration-fast, 300ms) ease,
+              color var(--motion-duration-fast, 300ms) ease;
+}
+
+.company-card:hover .company-card__badge {
+  background: var(--accent);
+  color: var(--color-void);
+}
+
+/* Card number — replaces old .company-card__num */
 .company-card__num {
   font-family: var(--font-geist);
   font-weight: var(--fw-semibold);
@@ -379,20 +458,153 @@ svg {
   margin-bottom: var(--sp-8);
 }
 
+/* Card name */
 .company-card__name {
   font-family: var(--font-geist);
   font-weight: var(--fw-semibold);
-  font-size: 16px;
+  font-size: 18px;
   color: var(--color-chalk);
-  margin-bottom: var(--sp-8);
+  letter-spacing: -0.3px;
+  transition: color var(--motion-duration-fast, 300ms) ease;
 }
 
+.company-card:hover .company-card__name {
+  color: var(--accent);
+}
+
+/* Tagline — new element */
+.company-card__tagline {
+  font-family: var(--font-geist);
+  font-weight: var(--fw-regular);
+  font-size: 12px;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: var(--sp-4);
+}
+
+/* Description */
 .company-card__desc {
   font-family: var(--font-geist);
   font-weight: var(--fw-regular);
   font-size: 13px;
   line-height: 1.5;
   color: var(--color-ash);
+  margin-top: var(--sp-4);
+  flex: 1;
+}
+
+/* Link at bottom */
+.company-card__link {
+  font-family: var(--font-geist);
+  font-weight: var(--fw-medium);
+  font-size: 12px;
+  color: var(--color-graphite);
+  margin-top: var(--sp-8);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  transition: color var(--motion-duration-fast, 300ms) ease;
+}
+
+.company-card__arrow {
+  display: inline-block;
+  transition: transform var(--motion-duration-fast, 300ms) ease;
+}
+
+.company-card:hover .company-card__link {
+  color: var(--accent);
+}
+
+.company-card:hover .company-card__arrow {
+  transform: translateX(4px);
+}
+
+/* ---- Per-card variant: dot grid pattern overlay ---- */
+.company-card--01::after,
+.company-card--04::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle at 2px 2px, var(--accent-dim) 1px, transparent 1px);
+  background-size: 8px 8px;
+  opacity: 0.15;
+  pointer-events: none;
+  transition: opacity var(--motion-duration-fast, 300ms) ease;
+}
+
+.company-card--01:hover::after,
+.company-card--04:hover::after {
+  opacity: 0.3;
+}
+
+/* ---- Per-card variant: diagonal stripe ---- */
+.company-card--02::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 8px,
+    rgba(79, 195, 247, 0.03) 8px,
+    rgba(79, 195, 247, 0.03) 16px
+  );
+  pointer-events: none;
+}
+
+/* ---- Per-card variant: corner accent ---- */
+.company-card--03::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 32px 32px 0;
+  border-color: transparent var(--accent-dim) transparent transparent;
+  opacity: 0.2;
+  pointer-events: none;
+  transition: opacity var(--motion-duration-fast, 300ms) ease;
+}
+
+.company-card--03:hover::after {
+  opacity: 0.5;
+}
+
+/* ---- Per-card variant: gradient border bottom ---- */
+.company-card--05 {
+  border-bottom-width: 2px;
+  border-bottom-color: transparent;
+  transition: border-bottom-color var(--motion-duration-fast, 300ms) ease,
+              background var(--motion-duration-fast, 300ms) ease;
+}
+
+.company-card--05:hover {
+  border-bottom-color: var(--accent);
+}
+
+/* ---- Per-card variant: shimmer dot ---- */
+.company-card--06::after {
+  content: '●';
+  position: absolute;
+  bottom: var(--sp-12);
+  right: var(--sp-12);
+  font-size: 18px;
+  color: var(--accent-dim);
+  opacity: 0.15;
+  pointer-events: none;
+  transition: opacity var(--motion-duration-fast, 300ms) ease,
+              transform var(--motion-duration-fast, 300ms) ease;
+}
+
+.company-card--06:hover::after {
+  opacity: 0.4;
+  transform: scale(1.3);
 }
 
 /* =========================================================
@@ -412,12 +624,46 @@ svg {
   border: 1px solid var(--color-carbon);
   background: var(--color-void);
   min-height: 80px;
+  position: relative;
+  transition: all var(--motion-duration-fast, 300ms) ease;
+  overflow: hidden;
+}
+
+.logo-grid__cell:hover {
+  background: var(--color-cinder);
+  border-color: var(--cell-accent, var(--color-fog));
+  box-shadow: inset 0 0 0 1px var(--cell-accent, transparent);
 }
 
 .logo-grid__cell svg {
   width: 100%;
   height: auto;
   max-height: 36px;
+  transition: opacity var(--motion-duration-fast, 300ms) ease,
+              transform var(--motion-duration-fast, 300ms) ease;
+}
+
+.logo-grid__cell:hover svg {
+  opacity: 1;
+  transform: scale(1.04);
+}
+
+/* Each cell gets a subtle bar on hover */
+.logo-grid__cell::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--cell-accent, var(--color-fog));
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform var(--motion-duration-fast, 300ms) ease;
+}
+
+.logo-grid__cell:hover::after {
+  transform: scaleX(1);
 }
 
 /* =========================================================
@@ -612,6 +858,20 @@ svg {
 
   .companies-grid {
     grid-template-columns: 1fr;
+  }
+
+  .company-card {
+    padding: var(--sp-16);
+  }
+
+  .company-card__icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .company-card__icon svg {
+    width: 24px;
+    height: 24px;
   }
 
   .team-grid {
