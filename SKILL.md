@@ -1,28 +1,28 @@
 ---
-name: design-system-basement-studio
+name: design-system-zkpass
 description: Creates implementation-ready design-system guidance with tokens, component behavior, and accessibility standards. Use when creating or updating UI rules, component specifications, or design-system documentation.
 ---
 
 <!-- TYPEUI_SH_MANAGED_START -->
 
-# basement.studio
+# zkPass
 
 ## Mission
-Deliver implementation-ready design-system guidance for basement.studio that can be applied consistently across e-commerce storefront interfaces.
+Deliver implementation-ready design-system guidance for zkPass that can be applied consistently across e-commerce storefront interfaces.
 
 ## Brand
-- Product/brand: basement.studio
-- URL: https://basement.studio/
+- Product/brand: zkPass
+- URL: https://zkpass.org/
 - Audience: online shoppers and consumers
 - Product surface: e-commerce storefront
 
 ## Style Foundations
 - Visual style: structured, accessible, implementation-first
-- Main font style: `font.family.primary=Geist`, `font.family.stack=Geist, Geist Fallback`, `font.size.base=16px`, `font.weight.base=400`, `font.lineHeight.base=24px`
-- Typography scale: `font.size.xs=12px`, `font.size.sm=13px`, `font.size.md=16px`, `font.size.lg=20px`, `font.size.xl=24px`, `font.size.2xl=38px`, `font.size.3xl=76px`, `font.size.4xl=87px`
-- Color palette: `color.text.primary=#e6e6e6`, `color.text.secondary=#ffffff`, `color.text.tertiary=#c4c4c4`, `color.text.inverse=#757575`, `color.surface.base=#000000`, `color.surface.muted=#2e2e2e`, `color.surface.raised=#1a1a1a`, `color.border.default=#e5e7eb`
-- Spacing scale: `space.1=2px`, `space.2=4px`, `space.3=8px`, `space.4=16px`, `space.5=24px`, `space.6=56px`, `space.7=96px`
-- Radius/shadow/motion tokens: `motion.duration.instant=60ms`, `motion.duration.fast=300ms`
+- Main font style: `font.family.primary=PT Serif`, `font.family.stack=PT Serif, Georgia, Times New Roman, serif`, `font.size.base=16px`, `font.weight.base=400`, `font.lineHeight.base=normal`
+- Typography scale: `font.size.xs=10px`, `font.size.sm=11px`, `font.size.md=12px`, `font.size.lg=13px`, `font.size.xl=14px`, `font.size.2xl=16px`, `font.size.3xl=22px`, `font.size.4xl=24px`
+- Color palette: `color.text.primary=#ffffff`, `color.text.secondary=#c5c5c5`, `color.surface.base=#000000`, `color.text.inverse=#ebebeb`, `color.surface.muted=#c5ff4a`
+- Spacing scale: `space.1=6px`, `space.2=8px`, `space.3=10px`, `space.4=14px`, `space.5=16px`, `space.6=18px`, `space.7=20px`, `space.8=22px`
+- Radius/shadow/motion tokens: `motion.duration.instant=180ms`, `motion.duration.fast=220ms`, `motion.duration.normal=240ms`, `motion.duration.slow=250ms`, `motion.duration.slower=340ms`, `motion.duration.step6=380ms`
 
 ## Accessibility
 - Target: WCAG 2.2 AA
