@@ -387,9 +387,57 @@
         .anim-delay-4 { animation-delay: 0.6s; }
 
         /* ============================================================
+        STICKY RUNNING TEXT
+        ============================================================ */
+        .running-text-bar {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%;
+            z-index: 10001;
+            background: linear-gradient(90deg, rgba(0, 229, 255, 0.10), rgba(124, 77, 255, 0.10), rgba(0, 229, 255, 0.10));
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 229, 255, 0.12);
+            padding: 10px 0;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .running-text-inner {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marqueeScroll 35s linear infinite;
+            padding-left: 100%;
+        }
+        .running-text-inner span {
+            font-family: 'Segoe UI', 'Inter', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.72rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #00e5ff;
+            display: inline-block;
+            padding: 0 18px;
+        }
+        .running-text-inner span.sep {
+            color: rgba(0, 229, 255, 0.25);
+            padding: 0 4px;
+        }
+
+        @keyframes marqueeScroll {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Push body down to account for sticky running text */
+        .running-text-push {
+            height: 42px;
+        }
+
+        /* Hero content adjustment for sticky bar */
+        /* ============================================================
         HERO SECTION
         ============================================================ */
         .hero {
+            padding-top: 42px;
             position: relative;
             width: 100%;
             min-height: 100vh;
@@ -1133,6 +1181,27 @@
     </style>
 </head>
 <body>
+
+    <!-- ============================================================
+    STICKY RUNNING TEXT
+    ============================================================ -->
+    <div class="running-text-bar">
+        <div class="running-text-inner">
+            <span>Land for Sale Batukaras</span><span class="sep">•</span>
+            <span>Beachfront Property Indonesia</span><span class="sep">•</span>
+            <span>Hotel for Sale Batukaras</span><span class="sep">•</span>
+            <span>Freehold Coastal Land West Java</span><span class="sep">•</span>
+            <span>Surf Property Investment</span><span class="sep">•</span>
+            <span>Buy Land Pangandaran</span><span class="sep">•</span>
+            <span>Indonesia Real Estate Investment</span><span class="sep">•</span>
+            <span>Beach Land for Sale West Java</span><span class="sep">•</span>
+            <span>Hotel Building Batukaras</span><span class="sep">•</span>
+            <span>SHM Freehold Title Batukaras</span><span class="sep">•</span>
+            <span>Property for Sale Batukaras</span><span class="sep">•</span>
+            <span>Surf Land Batukaras</span><span class="sep">•</span>
+        </div>
+    </div>
+    <div class="running-text-push"></div>
 
     <!-- ============================================================
     HERO SECTION
