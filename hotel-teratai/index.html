@@ -141,7 +141,7 @@
     <!-- ============================================================
     ⚙️ CONFIGURATION VARIABLES — Ubah di sini
     ============================================================
-    HERO BG       → Cari "HERO_BG" di CSS (.hero)
+    HERO VIDEO    → Cari "HERO_VIDEO" di HTML (section Hero)
     YOUTUBE       → Cari "YOUTUBE_ID" di HTML (section Video Tour)
     GOOGLE MAPS   → Cari "MAPS_SRC" di HTML (section Location Map)
     GALLERY       → Cari "GALLERY_IMG" di HTML (section Gallery)
@@ -396,15 +396,57 @@
             display: block;
             text-align: center;
             overflow: hidden;
-            /* ⚙️ HERO_BG: Ganti URL gambar background di bawah */
+            background: #050510;
+        }
+
+        /* Video background */
+        .hero-video-bg {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        .hero-video-bg iframe {
+            position: absolute;
+            top: 50%; left: 50%;
+            width: 100vw;
+            height: 56.25vw;
+            min-height: 100vh;
+            min-width: 177.78vh;
+            transform: translate(-50%, -50%);
+            border: 0;
+        }
+
+        /* Dark gradient overlay on top of video */
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 1;
+            pointer-events: none;
             background:
                 radial-gradient(ellipse at 40% 30%, rgba(0, 229, 255, 0.08) 0%, transparent 60%),
                 radial-gradient(ellipse at 70% 70%, rgba(124, 77, 255, 0.06) 0%, transparent 60%),
-                linear-gradient(180deg, rgba(5,5,16,0.7) 0%, rgba(5,5,16,0.85) 60%, #050510 100%),
-                url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+                linear-gradient(180deg, rgba(5,5,16,0.7) 0%, rgba(5,5,16,0.85) 60%, #050510 100%);
+        }
+
+        /* Hero mobile fallback — video doesn't autoplay on mobile, use static image */
+        @media screen and (max-width: 768px) {
+            .hero-video-bg { display: none; }
+            .hero::before {
+                content: '';
+                position: absolute;
+                top: 0; left: 0;
+                width: 100%; height: 100%;
+                z-index: 0;
+                background:
+                    url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=80');
+                background-size: cover;
+                background-position: center;
+            }
         }
 
         /* Animated particles overlay */
@@ -1108,8 +1150,18 @@
 
     <!-- ============================================================
     HERO SECTION
+    ⚙️ HERO_VIDEO: YouTube video loop — ganti ID di src untuk ganti background
     ============================================================ -->
     <section class="hero">
+        <!-- Video Background -->
+        <div class="hero-video-bg">
+            <iframe
+                src="https://www.youtube.com/embed/YyUhslfLfZM?autoplay=1&mute=1&loop=1&playlist=YyUhslfLfZM&controls=0&showinfo=0&rel=0&disablekb=1&modestbranding=1"
+                frameborder="0"
+                allow="autoplay; encrypted-media"
+                allowfullscreen>
+            </iframe>
+        </div>
         <div class="hero-particles" id="heroParticles"></div>
         <div class="hero-content">
             <div class="hero-badge anim-fade-up">✦ Beachfront Land &amp; Hotel for Sale — Batukaras</div>
