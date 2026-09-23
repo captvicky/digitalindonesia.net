@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="stylesheet" href="css/style.css" />
+  <style>@media (max-width:520px){.nav-profile{display:none}}</style>
 </head>
 <body>
 
@@ -48,6 +49,7 @@
         <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
       <div class="nav-actions">
+        <a href="/cv-gunawisesa-digital-kreasi/" class="btn-outline btn-sm nav-profile">Company Profile</a>
         <a href="#contact" class="btn-glow btn-sm">Contact Us</a>
         <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
           <span></span>
@@ -380,112 +382,90 @@
   <section id="roadmap" class="section">
     <!-- Mobile responsive styles for timeline -->
     <style>
-      /* Perbaikan tampilan desktop: lebih lebar & proporsional */
-      #roadmap .container {
-        max-width: 1200px;
-        padding-left: 2rem;
-        padding-right: 2rem;
-      }
-      .timeline {
-        gap: 3rem; /* lebih lapang */
-      }
-      .timeline-content {
-        padding-left: 1rem; /* beri ruang kiri untuk teks */
-      }
-
-      /* Default: Grid 2 kolom untuk PC */
-      .timeline {
+      /* ===== Roadmap / timeline: rapi di PC & mobile ===== */
+      /* (menggantikan .timeline-content{width:45%} & max-width:800px bawaan style.css) */
+      #roadmap .timeline {
+        position: relative;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-        position: relative;
+        gap: 48px 40px;
+        max-width: 1200px;
+        margin: 0 auto;
         padding: 0;
-        align-items: stretch; /* samakan tinggi item */
+        align-items: stretch;
       }
-      .timeline-line {
-        display: none;
-      }
-      .timeline-item {
+      #roadmap .timeline-line { display: none; }
+      #roadmap .timeline-item {
         display: flex;
         flex-direction: column;
         height: 100%;
         margin-bottom: 0;
       }
-      .timeline-marker {
-        margin-bottom: 0.5rem;
-        flex-shrink: 0;
-      }
-      .timeline-content {
+      #roadmap .timeline-marker { margin-bottom: 10px; flex-shrink: 0; }
+      #roadmap .timeline-content {
         flex: 1;
-        padding-left: 0;
+        width: auto;
+        max-width: 100%;
         display: flex;
         flex-direction: column;
+        padding: 26px 28px;
+        background: var(--glass);
+        border: 1px solid var(--glass-bd);
+        border-radius: var(--r3);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        transition: border-color 340ms ease-out, transform 340ms ease-out;
       }
-      .timeline-date {
-        font-size: 0.85rem;
+      #roadmap .timeline-item:hover .timeline-content {
+        border-color: rgba(0, 240, 255, 0.16);
+        transform: translateY(-3px);
       }
-      .timeline-content h3 {
-        font-size: 1.2rem;
-        margin-top: 0.3rem;
-        margin-bottom: 0.3rem;
+      #roadmap .timeline-date {
+        align-self: flex-start;
+        font-size: 11.5px;
+        padding: 4px 12px;
+        margin-bottom: 12px;
+        color: #7de3ff;
+        background: rgba(0, 240, 255, 0.12);
+        border: 1px solid rgba(0, 240, 255, 0.28);
       }
-      .timeline-content p {
-        font-size: 0.9rem;
-        flex: 1; /* biar paragraf mengisi ruang */
+      #roadmap .timeline-content h3 {
+        font-size: 1.15rem;
+        line-height: 1.4;
+        margin: 0 0 8px;
       }
-      .timeline-tags {
+      #roadmap .timeline-content p {
+        font-size: 0.92rem;
+        line-height: 1.7;
+        color: var(--txt2);
+        margin: 0;
+        flex: 1;
+      }
+      #roadmap .timeline-tags {
+        display: flex;
         flex-wrap: wrap;
-        gap: 0.3rem;
-        margin-top: auto; /* dorong ke bawah */
+        gap: 6px;
+        margin-top: 18px;
       }
-      .timeline-tags span {
-        font-size: 0.75rem;
-        padding: 0.2rem 0.6rem;
+      #roadmap .timeline-tags span {
+        font-size: 11px;
+        padding: 3px 11px;
+        color: #d8b4fe;
+        background: rgba(168, 85, 247, 0.14);
+        border: 1px solid rgba(168, 85, 247, 0.32);
       }
 
-      /* Mobile: tumpuk vertikal */
+      /* Tablet & mobile: satu kolom penuh */
+      @media (max-width: 880px) {
+        #roadmap .timeline { grid-template-columns: 1fr; gap: 28px; }
+      }
       @media (max-width: 767px) {
-        .timeline {
-          display: block;
-          padding: 0 1rem;
-        }
-        .timeline-item {
-          flex-direction: column !important;
-          align-items: flex-start !important;
-          margin-bottom: 2rem;
-          height: auto;
-        }
-        .timeline-marker {
-          margin-bottom: 0.5rem;
-          margin-right: 0;
-          position: relative;
-          left: auto;
-        }
-        .timeline-content {
-          padding-left: 0 !important;
-          padding-right: 0;
-          width: 100%;
-        }
-        .timeline-line {
-          display: none;
-        }
-        .timeline-date {
-          font-size: 0.85rem;
-        }
-        .timeline-content h3 {
-          font-size: 1.2rem;
-        }
-        .timeline-content p {
-          font-size: 0.9rem;
-        }
-        .timeline-tags {
-          flex-wrap: wrap;
-          gap: 0.3rem;
-        }
-        .timeline-tags span {
-          font-size: 0.75rem;
-          padding: 0.2rem 0.6rem;
-        }
+        #roadmap .timeline { display: flex; flex-direction: column; padding: 0; }
+        #roadmap .timeline-item { margin-bottom: 26px; height: auto; }
+        #roadmap .timeline-item:last-child { margin-bottom: 0; }
+        #roadmap .timeline-content { width: 100%; padding: 22px; }
+        #roadmap .timeline-content h3 { font-size: 1.05rem; }
+        #roadmap .timeline-content p { font-size: 0.9rem; }
       }
     </style>
     <div class="container">
@@ -698,6 +678,7 @@
         <div class="footer-links" data-aos="fade-up" data-aos-delay="200">
           <h4>Resources</h4>
           <ul>
+            <li><a href="/cv-gunawisesa-digital-kreasi/">Company Profile</a></li>
             <li><a href="#">Blog</a></li>
             <li><a href="#">FAQ</a></li>
             <li><a href="#">Careers</a></li>
